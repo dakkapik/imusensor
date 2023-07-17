@@ -4,7 +4,7 @@ import sys
 import time
 from json import JSONEncoder
 import json
-import smbus
+import smbus2
 
 from imusensor.MPU9250 import config
 
@@ -606,7 +606,7 @@ class MPU9250:
 
 	@Bus.setter
 	def Bus(self, Bus):
-		if isinstance(Bus, smbus.SMBus):
+		if isinstance(Bus, smbus2.SMBus):
 			self._Bus = Bus
 		else:
 			raise Exception("Please provide the object created by smbus")
